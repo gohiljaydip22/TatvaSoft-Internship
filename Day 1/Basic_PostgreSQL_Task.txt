@@ -1,0 +1,75 @@
+-- Step 1: Create students table
+CREATE TABLE students (
+   student_id SERIAL PRIMARY KEY,
+   first_name VARCHAR(100) NOT NULL,
+   last_name VARCHAR(100) NOT NULL,
+   email VARCHAR(255) UNIQUE NOT NULL,
+   enrolled_on TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+   updated_on TIMESTAMPTZ,
+   is_active BOOLEAN
+);
+
+-- Step 2: Create courses table
+CREATE TABLE courses (
+   course_id SERIAL PRIMARY KEY,
+   student_id INTEGER REFERENCES students(student_id),
+   course_name VARCHAR(100) NOT NULL,
+   credits INTEGER NOT NULL,
+   enrolled_date TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Step 3: Insert one student
+INSERT INTO students (first_name, last_name, email, is_active)
+VALUES ('Ravi', 'Sharma', 'ravi.sharma@example.com', true);
+
+-- Step 4: Insert multiple students
+INSERT INTO students (first_name, last_name, email, is_active) VALUES
+('Amit', 'Patel', 'amit.patel@example.com', true),
+('Nina', 'Desai', 'nina.desai@example.com', false),
+('Sara', 'Khan', 'sara.khan@example.com', true),
+('John', 'Doe', 'john.doe@example.com', true);
+
+-- Step 5: Insert courses
+INSERT INTO courses (student_id, course_name, credits) VALUES
+(1, 'Maths', 4),
+(1, 'Physics', 3),
+(2, 'Biology', 4),
+(3, 'Chemistry', 3),
+(4, 'History', 2);
+
+-- Step 6: Select queries
+SELECT * FROM students;
+SELECT first_name, email FROM students;
+SELECT * FROM students WHERE is_active = true;
+SELECT * FROM students ORDER BY first_name ASC;
+
+-- Step 7: Join students with courses
+SELECT s.first_name, s.last_name, c.course_name
+FROM students s
+JOIN courses c ON s.student_id = c.student_id;
+
+-- Step 8: Group and aggregate
+SELECT s.student_id, s.first_name, COUNT(c.course_id) AS total_courses
+FROM students s
+JOIN courses c ON s.student_id = c.student_id
+GROUP BY s.student_id;
+
+-- Step 9: HAVING example
+SELECT s.student_id, COUNT(c.course_id) AS total_courses
+FROM students s
+JOIN courses c ON s.student_id = c.student_id
+GROUP BY s.student_id
+HAVING COUNT(c.course_id) > 1;
+
+-- Step 10: Subquery
+SELECT * FROM courses WHERE student_id IN (
+  SELECT student_id FROM students WHERE is_active = true
+);
+
+-- Step 11: Update
+UPDATE students
+SET email = 'ravi.sharma2025@example.com'
+WHERE student_id = 1;
+
+-- Step 12: Delete
+DELETE FROM students WHERE student_id = 5;
