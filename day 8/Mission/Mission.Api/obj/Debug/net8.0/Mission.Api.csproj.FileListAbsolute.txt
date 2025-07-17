@@ -118,4 +118,5 @@ D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Api\obj\Debug\net8.
 D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Api\obj\Debug\net8.0\Mission.Api.pdb
 D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Api\obj\Debug\net8.0\Mission.Api.genruntimeconfig.cache
 D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Api\obj\Debug\net8.0\ref\Mission.Api.dll
+D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Api\obj\Debug\net8.0\Mission.Api.sourcelink.json
 D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

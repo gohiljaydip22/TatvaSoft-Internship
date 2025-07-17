@@ -13,3 +13,4 @@ D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Repositories\obj\De
 D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Repositories\obj\Debug\net8.0\refint\Mission.Repositories.dll
 D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Repositories\obj\Debug\net8.0\Mission.Repositories.pdb
 D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Repositories\obj\Debug\net8.0\ref\Mission.Repositories.dll
+D:\GTU Summer Intership 2025(tatvasft)\day 8\Mission\Mission.Repositories\obj\Debug\net8.0\Mission.Repositories.sourcelink.json
